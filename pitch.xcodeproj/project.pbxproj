@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D69F1471A25D9C400D2990D /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69F1461A25D9C400D2990D /* RecordedAudio.swift */; };
 		1D71450C1A24DDE100FDF548 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D71450B1A24DDE100FDF548 /* PlaySoundsViewController.swift */; };
-		1D71450E1A24E1F300FDF548 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D71450D1A24E1F300FDF548 /* movie_quote.mp3 */; };
 		1D90AA681A23B67D009C036D /* RecordSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D90AA671A23B67D009C036D /* RecordSoundViewController.swift */; };
 		1D90AA6B1A23B67D009C036D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D90AA691A23B67D009C036D /* Main.storyboard */; };
 		1D90AA6D1A23B67D009C036D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D90AA6C1A23B67D009C036D /* Images.xcassets */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		1D69F1461A25D9C400D2990D /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordedAudio.swift; path = pitch/Classes/Models/RecordedAudio.swift; sourceTree = "<group>"; };
 		1D71450B1A24DDE100FDF548 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaySoundsViewController.swift; path = pitch/Classes/Controllers/PlaySoundsViewController.swift; sourceTree = "<group>"; };
-		1D71450D1A24E1F300FDF548 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = movie_quote.mp3; path = /Users/flipens/Documents/Udacity/swift/pitch/pitch/Resources/movie_quote.mp3; sourceTree = "<absolute>"; };
 		1D90AA601A23B67D009C036D /* pitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D90AA641A23B67D009C036D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D90AA671A23B67D009C036D /* RecordSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordSoundViewController.swift; path = /Users/flipens/Documents/Udacity/swift/pitch/pitch/Classes/Controllers/RecordSoundViewController.swift; sourceTree = "<absolute>"; };
@@ -146,7 +144,6 @@
 		1DFA634C1A249CE900BB0ED2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1D71450D1A24E1F300FDF548 /* movie_quote.mp3 */,
 				1D90AA691A23B67D009C036D /* Main.storyboard */,
 				1D90AA6C1A23B67D009C036D /* Images.xcassets */,
 				1D90AA6E1A23B67D009C036D /* LaunchScreen.xib */,
@@ -236,7 +233,6 @@
 			files = (
 				1D90AA6B1A23B67D009C036D /* Main.storyboard in Resources */,
 				1D90AA701A23B67D009C036D /* LaunchScreen.xib in Resources */,
-				1D71450E1A24E1F300FDF548 /* movie_quote.mp3 in Resources */,
 				1D90AA6D1A23B67D009C036D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

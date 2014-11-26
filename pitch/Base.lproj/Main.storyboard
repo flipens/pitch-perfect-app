@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tWN-TH-jFU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C68m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tWN-TH-jFU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -49,7 +49,7 @@
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y1n-15-NPs"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEd-5C-tw5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEd-5C-tw5">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Iwr-FS-ofS"/>
@@ -204,16 +204,16 @@
                                 <exclude reference="zNe-ZH-ShZ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ozu-wz-gyI"/>
+                                <exclude reference="J3O-FE-3an"/>
                                 <exclude reference="5TW-pB-bhD"/>
                                 <exclude reference="Z5w-fX-wnt"/>
                                 <exclude reference="1qb-e8-BHn"/>
                                 <exclude reference="pYS-pt-Poe"/>
-                                <exclude reference="7aZ-Zd-sCM"/>
-                                <exclude reference="XNQ-Zk-8mw"/>
                                 <exclude reference="QBy-d9-ehH"/>
                                 <exclude reference="lRY-6u-RtR"/>
-                                <exclude reference="J3O-FE-3an"/>
-                                <exclude reference="ozu-wz-gyI"/>
+                                <exclude reference="7aZ-Zd-sCM"/>
+                                <exclude reference="XNQ-Zk-8mw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -225,16 +225,16 @@
                                 <include reference="zNe-ZH-ShZ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="ozu-wz-gyI"/>
+                                <include reference="J3O-FE-3an"/>
                                 <include reference="5TW-pB-bhD"/>
                                 <include reference="Z5w-fX-wnt"/>
                                 <include reference="1qb-e8-BHn"/>
                                 <include reference="pYS-pt-Poe"/>
-                                <include reference="7aZ-Zd-sCM"/>
-                                <include reference="XNQ-Zk-8mw"/>
                                 <include reference="QBy-d9-ehH"/>
                                 <include reference="lRY-6u-RtR"/>
-                                <include reference="J3O-FE-3an"/>
-                                <include reference="ozu-wz-gyI"/>
+                                <include reference="7aZ-Zd-sCM"/>
+                                <include reference="XNQ-Zk-8mw"/>
                             </mask>
                         </variation>
                     </view>
