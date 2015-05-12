@@ -12,6 +12,7 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
+    var audioPlayerDelayed:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     
     var audioEngine:AVAudioEngine!
@@ -20,8 +21,13 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.enableRate = true
+        
+        audioPlayerDelayed = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
@@ -73,23 +79,61 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
+    @IBAction func playAudioWithEcho(sender: UIButton) {
+        playAudioWithVariableDelayTime(0.5) //500ms
+    }
+    
+    func playAudioWithVariableDelayTime(delayTime: NSTimeInterval) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changeDelayEffect = AVAudioUnitDelay()
+        changeDelayEffect.delayTime = delayTime
+        audioEngine.attachNode(changeDelayEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changeDelayEffect, format: nil)
+        audioEngine.connect(changeDelayEffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+    }
+    
+    @IBAction func playAudioWithReverb(sender: UIButton) {
+        playAudioWithVariableReverb(50.0)
+    }
+    
+    func playAudioWithVariableReverb(mix: Float) {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changeReverbEffect = AVAudioUnitReverb()
+        changeReverbEffect.wetDryMix = 50.0
+        audioEngine.attachNode(changeReverbEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changeReverbEffect, format: nil)
+        audioEngine.connect(changeReverbEffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+    }
+    
     @IBAction func stopAudio(sender: UIButton) {
         audioPlayer.stop()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
 }
