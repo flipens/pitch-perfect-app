@@ -27,6 +27,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         //Hide stop button
         stopButton.hidden = true
         pauseButton.hidden = true

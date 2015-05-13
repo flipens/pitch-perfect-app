@@ -42,9 +42,8 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariableSpeed(speed: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        resetAudioEngine()
+        
         audioPlayer.rate = speed
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
@@ -59,9 +58,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariablePitch(pitch: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        resetAudioEngine()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -84,9 +81,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariableDelayTime(delayTime: NSTimeInterval) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        resetAudioEngine()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -109,9 +104,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariableReverb(mix: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        resetAudioEngine()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -129,8 +122,16 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
+    //We make sure that there is no other player object running and reset the audio engine
+    func resetAudioEngine() {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+    }
+    
     @IBAction func stopAudio(sender: UIButton) {
         audioPlayer.stop()
+        audioEngine.stop()
     }
     
     override func didReceiveMemoryWarning() {
